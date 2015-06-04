@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New IMDb App</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	<nav>
+		<a href="#search">Search</a>
+		<a href="#home">Home</a>
+	</nav>
+	
+	<!-- Home page with search box --> 
+	<section class="page" id="home">
+		<h1>Movie Search</h1>
+		<h4>Search movies on IMDb, and click titles add to your watch list.</h4>
+		<form id="search-form">
+			<input type="text" id="movie-query" placeholder="Search for a movie...">
+			<button type="submit" id="search-button">Search</button>
+		</form>
+	</section>
+
+	<!-- Search Results -->
+	<section class="page" id="search-results">
+		<h2>Search Results</h2>
+		<div id="movie-list"></div>
+		
+		<form id="new-search-form">
+			<input type="text" id="new-movie-query" placeholder="Search again...">
+			<button type="submit" id="new-search-button">Search</button>
+		</form>
+		<script type="text/template" id="movie-row">
+			<div class="movie-row">
+				<div><%= Title %></div>
+				<div><%= Year %></div>
+				<!-- <div><%= imdbID %></div>
+				<div><%= Type %></div> -->
+			</div>
+		</script>
+	
+	</section>
+
+	<section id="list">
+		<div><h1>Watch List</h1>
+			<div id="watch-list"></div>
+		</div>
+	</section>
+	
+
+<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
